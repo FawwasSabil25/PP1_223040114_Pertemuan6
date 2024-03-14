@@ -140,6 +140,7 @@ public class StrukturList {
     //remove all
     void removeAll(){
         HEAD = null;
+        //ketika head bernilai null maka list tidak akan memiliki kelanjutannya
     }
 
     //operasi find
@@ -148,10 +149,20 @@ public class StrukturList {
         boolean ketemu = false;
 
         while (curNode != null && !ketemu){
+            /*
+             * ketika curNode tidak sama dengan null dan tidak ketemu maka akan mencari
+             */
             if(curNode.getData() == x )
             ketemu = true;
+            /*
+             * ketika curnode = x maka akan return ketemu = true
+             */
             else
             curNode = curNode.getNext();
+            /*
+             * kalau tidak sama maka akan ke value selanjutnya untuk
+             * mencari value yang sama dengan x
+             */
         }
         return ketemu;
     }
@@ -163,6 +174,10 @@ public class StrukturList {
         while (curNode != null) {
             jumlah++;
             curNode = curNode.getNext();
+            /*
+             * tiap curnode akan menambahkan jumlah dengan 1
+             * sehingga pada akhir node, jumlah akan sesuai dengan jumlah node
+             */
         }
         return jumlah;
     }
